@@ -42,26 +42,21 @@ Stories not restricted (no Close Friends use)    5 pts
 CATEGORY 3 — CONTENT & LOCATION EXPOSURE     max  30 pts
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Geotags enabled on posts / stories             12 pts
+Geotags enabled on posts / stories             17 pts
   → Directly exposes home address, workplace,
-    and daily routine. Highest-value input
-    for pattern-of-life analysis — lets an
-    attacker predict where a subject will
-    be and when.
+    and daily routine via Instagram's own
+    native tagging feature — fully automatable
+    to detect. Highest-value input for
+    pattern-of-life analysis.
 
-Photos reveal home / workplace exterior        10 pts
-  → Even without explicit tags, background
-    details (street signs, storefronts,
-    building features) allow geolocation.
-    Provides physical context for
-    in-person social engineering attempts.
+Posts contain minors with identifying info      13 pts
+  → School names, uniforms, and children's
+    routines are visible in captions and
+    tags — detectable via text/tag analysis.
+    Creates leverage for urgency-based
+    pretexting scenarios targeting the
+    account holder.
 
-Posts contain minors with identifying info       8 pts
-  → School names, uniforms, children's
-    routines create additional leverage
-    points. Social engineers exploit family
-    context to build urgency and emotional
-    pressure in pretexting scenarios.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 CATEGORY 4 — CONNECTED ACCOUNTS & ACCESS     max  15 pts
