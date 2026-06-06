@@ -1,0 +1,111 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY 1 — PII & PROFILE EXPOSURE          max  30 pts
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Full legal name visible on profile              12 pts
+  → Real name makes a subject directly
+    identifiable and searchable across
+    platforms. Core input for impersonation
+    and pretexting attacks.
+
+Email address visible / inferrable              10 pts
+  → Exposed email is the primary delivery
+    channel for spear-phishing. Also enables
+    attacker to craft believable "I know
+    who you are" pretexts.
+
+Date of birth visible                            8 pts
+  → Combined with name: sufficient to
+    construct a convincing identity claim,
+    pass verbal verification (e.g. bank
+    or telco calls), and personalise lures.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY 2 — ACCOUNT PRIVACY SETTINGS        max  15 pts
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Account set to Public                           10 pts
+  → Entire post history, follower/following
+    list, tagged content, and stories are
+    freely accessible. Enables deep
+    reconnaissance with no interaction
+    required from the attacker.
+
+Stories not restricted (no Close Friends use)    5 pts
+  → Stories reveal daily context — location,
+    mood, routines, social circle. No
+    segmentation means this real-time feed
+    is open to all followers including
+    unknown/fake accounts.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY 3 — CONTENT & LOCATION EXPOSURE     max  30 pts
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Geotags enabled on posts / stories             12 pts
+  → Directly exposes home address, workplace,
+    and daily routine. Highest-value input
+    for pattern-of-life analysis — lets an
+    attacker predict where a subject will
+    be and when.
+
+Photos reveal home / workplace exterior        10 pts
+  → Even without explicit tags, background
+    details (street signs, storefronts,
+    building features) allow geolocation.
+    Provides physical context for
+    in-person social engineering attempts.
+
+Posts contain minors with identifying info       8 pts
+  → School names, uniforms, children's
+    routines create additional leverage
+    points. Social engineers exploit family
+    context to build urgency and emotional
+    pressure in pretexting scenarios.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY 4 — CONNECTED ACCOUNTS & ACCESS     max  15 pts
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Facebook account linked / cross-posting          8 pts
+  → Direct bridge to a second identity
+    profile with richer PII (workplace,
+    hometown, relationships, life events).
+    An attacker researching Instagram can
+    pivot to Facebook for a fuller picture.
+
+3+ third-party apps connected via OAuth          7 pts
+  → Publicly visible app connections signal
+    what services the subject uses. Enables
+    targeted platform-specific lures
+    ("Your Spotify linked to Instagram
+    has been flagged…").
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CATEGORY 5 — ACCOUNT HYGIENE & HISTORY       max  10 pts
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Account inactive 12+ months but still public    6 pts
+  → Dormant public accounts are prime
+    impersonation targets — owner won't
+    notice a cloned profile, and the post
+    history provides authentic-looking
+    material for a fake account.
+
+Username exactly matches other platforms         4 pts
+  → Trivial cross-platform correlation.
+    Allows an attacker to aggregate profiles
+    on LinkedIn, Twitter, Reddit, and
+    GitHub from a single username, building
+    a comprehensive target dossier.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TOTAL                                         100 pts
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RISK TIERS
+  0 – 19    LOW       Minimal social engineering exposure
+  20 – 44   MEDIUM    Some exploitable indicators present
+  45 – 69   HIGH      Significant pretexting surface available
+  70 – 100  CRITICAL  Rich attack profile, immediate review needed
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
