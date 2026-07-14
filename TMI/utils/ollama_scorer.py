@@ -189,6 +189,7 @@ def score_profile(
         raw = re.sub(r"\s*```$", "", raw)
  
         result = json.loads(raw)
+        
  
         # ── Post-process: override values the model gets wrong ────────────────
  

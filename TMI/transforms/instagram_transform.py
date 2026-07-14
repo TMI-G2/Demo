@@ -122,7 +122,8 @@ class instagram_transform(DiscoverableTransform):
         
         # ── 5. Score locally with Ollama ─────────────────────────────────────
         result = score_profile(profile, comments, flagged_following)
-
+        
+        
         # Stamp metadata onto result for audit trail
         result["_meta"] = {
             "transform":         "InstagramRiskTransform",

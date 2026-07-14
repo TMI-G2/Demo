@@ -146,47 +146,61 @@ def fetch_linkedin_profile(profile_url: str) -> dict:
     )
 
 
-# ── FACEBOOK (stub — ready to implement) ──────────────────────────────────────
-
-def fetch_facebook_profile(profile_url: str) -> dict:
-    """
-    TODO: Implement Facebook profile scraping.
-
-    Note: Facebook is the most locked-down platform.
-    Expect to retrieve: name, bio, profile picture, public posts only.
-    Friends list and groups are not accessible via any scraper.
-
-    Steps:
-      1. Add "facebook_profile" actor ID to config.APIFY_ACTORS
-      2. Implement logic below matching the normalised dict structure
-      3. Return with platform="facebook"
-    """
-    raise NotImplementedError(
-        "Facebook transform not yet implemented. "
-        "See utils/apify_scraper.py fetch_facebook_profile() stub."
-    )
-
-
-# ── TWITTER / X (stub — ready to implement) ───────────────────────────────────
+# ── TWITTER/X ─────────────────────────────────────────────────────────────────
 
 def fetch_twitter_profile(username: str) -> dict:
     """
-    TODO: Implement Twitter/X profile scraping.
+    Fetch Twitter/X profile metadata via Apify.
+    Returns a normalised dict or empty dict on failure.
 
-    Note: Twitter/X has heavily restricted its API since 2023.
-    Apify maintains working scrapers that bypass this — use:
-      apify/twitter-scraper  or  apify/tweet-scraper
-
-    Key fields to extract:
-      username, display_name, bio (description), is_verified,
-      followers_count, following_count, tweet_count, tweets (list)
-
-    Steps:
-      1. Add "twitter_profile" actor ID to config.APIFY_ACTORS
-      2. Implement scraping logic below
-      3. Return with platform="twitter"
+    Apify output fields used:
+      username, name, bio, location, followers, following,
+      tweets_count, is_protected, is_blue_verified, is_verified,
+      website, created_at, url
     """
-    raise NotImplementedError(
-        "Twitter/X transform not yet implemented. "
-        "See utils/apify_scraper.py fetch_twitter_profile() stub."
-    )
+    log.info("[Apify/Twitter] Fetching profile @%s", username)
+    client = get_client()
+
+    try:
+        run = client.actor(config.APIFY_ACTORS["twitter_profile"]).call(run_input={
+            "usernames": [username],
+        })
+        items = list(client.dataset(run.default_dataset_id).iterate_items())
+        if not items:
+            log.warning("[Apify/Twitter] No data for @%s", username)
+            return {}
+
+        raw = items[0]
+
+        # Skip if account not found
+        if raw.get("status") != "available":
+            log.warning("[Apify/Twitter] @%s status: %s", username, raw.get("status"))
+            return {}
+
+        profile = {
+            "platform":           "twitter",
+            "username":           raw.get("username", username),
+            "full_name":          sanitise(raw.get("name", "")),
+            "bio":                sanitise(raw.get("bio", "")),
+            "location":           sanitise(raw.get("location", "")),
+            "website":            raw.get("website", ""),
+            "is_private":         bool(raw.get("is_protected", False)),
+            "account_visibility": "private" if raw.get("is_protected", False) else "public",
+            "is_verified":        bool(raw.get("is_blue_verified") or raw.get("is_verified")),
+            "followers":          raw.get("followers", 0) or 0,
+            "following":          raw.get("following", 0) or 0,
+            "tweet_count":        raw.get("tweets_count", 0) or 0,
+            "profile_url":        raw.get("url", f"https://x.com/{username}"),
+            "created_at":         raw.get("created_at", ""),
+            "following_list":     [],  # not returned by this actor
+        }
+
+        log.info(
+            "[Apify/Twitter] @%s | followers=%d | protected=%s",
+            profile["username"], profile["followers"], profile["is_private"],
+        )
+        return profile
+
+    except Exception as exc:
+        log.error("[Apify/Twitter] Failed for @%s: %s", username, exc)
+        return {}

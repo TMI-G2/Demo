@@ -1,0 +1,1 @@
+sys.argv: ['D:\\TMI\\run_transform.py', 'Ibrahiazizz', 'person.fullname=Ibrahiazizz']

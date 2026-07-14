@@ -37,10 +37,11 @@ KNOWN_BAD_ACCOUNTS_FILE = None   # e.g. "bad_accounts.txt"
 APIFY_ACTORS = {
     "instagram_profile":  "apify/instagram-profile-scraper",
     "instagram_comments": "apify/instagram-comment-scraper",
+    "twitter_profile":    "dy7gIgPRMhrOrfW0f",
     # ── Future platforms (add actor IDs when ready) ──
     # "linkedin_profile":   "apify/linkedin-profile-scraper",
     # "facebook_profile":   "apify/facebook-profile-scraper",
-    # "twitter_profile":    "apify/twitter-scraper",
+    
 }
 
 # ── Risk rubric ────────────────────────────────────────────────────────────────
